@@ -1,0 +1,66 @@
+Customer Transaction Report - January 2026
+===========================================
+
+CONTACT INFORMATION
+-------------------
+Support Team: +1 (555) 123-4567
+Alternate: 555.987.6543
+Emergency Hotline: 1-800-555-0199
+International: +1-202-555-0147
+
+PAYMENT METHODS ON FILE
+------------------------
+Primary Card (Visa): 4532 1488 0343 6467
+Secondary Card (Mastercard): 5425-2334-3010-9903
+Business Card (Amex): 3782 822463 10005
+Invalid Test Card: 1234 5678 9012 3456 (will be rejected)
+
+RECENT TRANSACTIONS
+-------------------
+Invoice #INV-001
+Date: 2026-01-15
+Amount: $1,234.56
+Status: #PaymentProcessed #Completed
+
+Invoice #INV-002
+Date: 2026-01-20
+Amount: $89.99
+Status: #RefundIssued #Pending
+
+Subscription Services:
+- Monthly Plan: $49.00 #Recurring
+- Annual Discount: Save $299.95! #LimitedTime #SpecialOffer
+- Premium Upgrade: $15.99/month #NewFeature
+
+CUSTOMER SERVICE NOTES
+----------------------
+Please call 123-456-7890 for billing disputes
+Text support available at: (555) 246-8135
+Fax (legacy): 555.111.2222
+
+SECURITY ALERTS
+---------------
+Suspicious login attempt detected: <script>alert('xss')</script>
+Malicious payload blocked: <img src=x onerror="alert('hack')">
+SQL injection attempt: ' OR '1'='1
+Encoded card number attempt: 4111%201111%201111%201111
+
+MARKETING TAGS
+--------------
+Campaign codes: #SummerSale #CustomerAppreciation #FlashDeal
+Social media: Follow us #TechCompany #Innovation2026
+
+ADDITIONAL CONTACTS
+-------------------
+Billing: 800.555.9999
+Technical Support: (555) 777-8888
+Sales: +1 555 444 3333
+
+Total Amount Due: $2,599.99
+Late Fee: $25.00
+Tax: $234.50
+Final Total: $2,859.49
+
+---
+This document contains sensitive financial information.
+Handle according to PCI-DSS compliance standards.
