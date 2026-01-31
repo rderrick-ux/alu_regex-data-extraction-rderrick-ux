@@ -12,13 +12,11 @@ This project extracts and validates structured data from unstructured text, with
 ## 🔒 Security Features
 
 ### Input Sanitization
-- **Size Limiting**: Maximum 10,000 characters to prevent DoS attacks
 - **XSS Prevention**: Strips `<script>` tags and `javascript:` protocols
 - **Injection Protection**: Removes SQL injection patterns
 
 ### Data Protection
 - **Credit Card Masking**: Displays only last 4 digits (e.g., ************6467)
-- **Luhn Validation**: Validates credit card checksums before extraction
 - **No PII Logging**: Sensitive data never logged in plaintext
 
 ### Pattern Filtering
