@@ -9,7 +9,7 @@ import json
 
 class SecureDataExtractor:
     def __init__(self):
-        # Regex patterns with realistic variation support
+        
         self.patterns = {
             'phone': r'\b(?:\+1[-.\s]?)?(?:\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}\b',
             'credit_card': r'\b(?:\d{4}[-\s]?){3}\d{4}\b',
@@ -19,9 +19,9 @@ class SecureDataExtractor:
         
     def sanitize_input(self, text):
         """Security: Remove script tags and limit input size"""
-        if len(text) > 10000:  # Prevent DoS via large input
+        if len(text) > 10000:  
             raise ValueError("Input exceeds maximum length")
-        # Remove potential XSS/injection patterns
+        
         text = re.sub(r'<script[^>]*>.*?</script>', '', text, flags=re.IGNORECASE | re.DOTALL)
         text = re.sub(r'javascript:', '', text, flags=re.IGNORECASE)
         return text
@@ -46,12 +46,12 @@ class SecureDataExtractor:
         for dtype, pattern in self.patterns.items():
             matches = re.findall(pattern, text)
             
-            # Additional validation
+            
             if dtype == 'credit_card':
                 matches = [m for m in matches if self.validate_credit_card(m)]
                 matches = [self.mask_sensitive(dtype, m) for m in matches]
             elif dtype == 'phone':
-                # Filter out obvious false positives (e.g., all zeros)
+                
                 matches = [m for m in matches if not re.match(r'^[0\s\-\.\(\)]+$', m)]
             
             results[dtype] = matches if matches else []
@@ -60,7 +60,7 @@ class SecureDataExtractor:
 
 def main():
     """Main execution function"""
-    # Read from sample_input.txt or use embedded sample
+    
     try:
         with open('sample_input.txt', 'r') as f:
             sample_input = f.read()
@@ -87,11 +87,11 @@ Suspicious activity flagged: <script>alert('xss')</script>
 Encoded card attempt: 4111%201111%201111%201111
 """
     
-    # Execute extraction
+   
     extractor = SecureDataExtractor()
     results = extractor.extract(sample_input)
     
-    # Display results
+    
     print("="*60)
     print("SECURE DATA EXTRACTION RESULTS")
     print("="*60)
@@ -101,7 +101,7 @@ Encoded card attempt: 4111%201111%201111%201111
     print(f"[Security] Credit card data masked for protection")
     print("="*60)
     
-    # Save to output file
+    
     with open('sample_output.json', 'w') as f:
         json.dump(results, f, indent=2)
     print("\n✓ Results saved to sample_output.json")
